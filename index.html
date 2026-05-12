@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Portfolio of Gouse Baig, a front-end developer">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .responsive {
+                width: 80%;
+                max-width: 350px;
+                height: 220px;
+                padding-block: 15px;
+                gap: 10px;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: black;
+                color: white;
+            }
+            nav{
+                border-radius: 20px;
+                background-color: #555555;
+            }
+            .logo{
+                float:left;
+                padding-left: 25px;
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                border-radius: 20px;
+            }
+            li {
+                float: right;
+            }
+            li:last-child {
+                border-right: none;
+            }
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 21px 25px;
+                text-decoration: none;
+            }
+            li a:hover:not(.active) {
+                background-color: #beff6e;
+                color: #000;
+            }
+            .active {
+                background-color: #3e3f3e;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            input[type=text], input[type=email], select, textarea {
+                width: 100%;
+                color: white;
+                padding: 12px;
+                border: 1px solid #000000;
+                margin-top: 6px;
+                margin-bottom: 16px;
+                resize: vertical;
+                background-color: rgb(67, 67, 67);
+                border-radius: 10px;
+            }
+            input[type=submit] {
+                background-color:  rgb(166, 255, 65);
+                color: black;
+                padding: 12px 20px;
+                cursor: pointer;
+                display: inline-block;
+                font-size: 18px;
+                text-align: center;
+                outline: none;
+                border-radius: 20px;
+            }
+            input[type=submit]:hover {
+                background-color: rgb(146, 255, 22);
+            }
+            .container {
+                border-radius: 5px;
+                padding: 10px;
+            }
+            .column {
+                flex: 1; 
+                margin-top: 6px;
+                padding: 10px;
+                float: left;
+                width: 50%;
+            }
+            .row:after {
+                display: flex;
+                align-items: stretch;
+                content: "";
+                display: table;
+                clear: both; 
+            }
+            .heading {
+                margin: 5%;
+            }
+            .pho {
+                padding: 20px;
+                background-color: #666;
+                width: 100%;
+                height: 400px; 
+                border-radius: 20px;
+                object-fit: cover; 
+            }
+            h1 {
+                font-size: 400%;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            h2 {
+                font-size: 300%;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            h3 {
+                font-size: 120%;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .button {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                padding: 10px 20px;
+                font-size: 25px;
+                cursor: pointer;
+                text-align: center;
+                text-decoration: none;
+                outline: none;
+                color: #000000;
+                background-color: rgb(166, 255, 65);
+                border: none;
+                border-radius: 30px;
+            }
+            .button:hover {
+                background-color: rgb(146, 255, 22);
+            }
+            .icon-container {
+                position: relative;
+                width: 30px; 
+                height: 30px;
+                margin-left: 10px;
+            }
+            .icon-circle,
+            .icon-arrow {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 18px;
+                color: #000000;
+                transition: opacity 0.3s ease;
+            }
+            .icon-arrow { 
+                opacity: 0;
+                height: 30px; 
+                width: 30px;  
+                font-size: 18px; 
+            }
+            .button:hover .icon-circle {
+                opacity: 0;
+            }
+            .button:hover .icon-arrow {
+                opacity: 1;
+                color: rgb(166, 255, 65);
+                background-color: #000;
+                padding: 0;
+                border-radius: 50%;
+            }
+            a {
+                color:  rgb(166, 255, 65);
+                text-decoration-color: rgb(166, 255, 65); 
+                text-underline-offset: 5px;
+                padding: 2%;
+            }
+            i {
+                padding: 2px;
+                color:  rgb(166, 255, 65);
+            }
+            @media screen and (max-width: 768px) {
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                }
+                li {
+                    float: none;
+                    width: 100%;
+                    text-align: left;
+                }
+                .logo { order: 1; }
+                .w { order: 2; }
+                .a { order: 3; }
+                .c { order: 4; }
+                li a {
+                    padding: 15px;
+                    display: block;
+                    border-bottom: 1px solid #666;
+                }
+                .column, input[type=submit] {
+                    width: 100%;
+                    margin-top: 0;
+                }
+                .row {
+                    flex-direction: column;
+                }
+                .column pho {
+                    height: 350px; 
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li class="logo"><h3>GOUSE BAIG</h3></li>
+                <li class="c"><a href="#contact">Contact</a></li>
+                <li class="a"><a href="#about">About</a></li>
+                <li class="w"><a href="#work">Work</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <h1>HI, I AM<br>GOUSE BAIG</h1>
+                    <P>A web based front-end developer passionate about building accessible and user friendly website</P>
+                    <a href="#contact" class="button" aria-label="Contact me">CONTACT ME 
+                        <div class="icon-container">
+                            <i class="fa fa-circle icon-circle" aria-hidden="true"></i>
+                            <span class="icon-arrow" aria-hidden="true">&#x2197;</span> 
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/gouse-baig-722444358"><i class="fa fa-linkedin" style="font-size: 25px; background-color:#313131;padding: 12px;border-radius: 100px;"></i></a>
+                    <a href="https://www.github.com/Gouse-X"><i class="fa fa-github" style="font-size: 25px; background-color:#313131;padding: 12px;border-radius: 100px;"></i></a>     
+                </div>
+                <div class="column">
+                    <img src="g.jpg" alt="img not found" style="width: 80%;height: 450px;border-radius:15%; object-fit: cover;">
+                </div>
+            </div> 
+        </div><hr>
+        <section id="work">
+        <div class="heading">
+        <h2>PROJECTS</h2>
+        <p style="margin-right: 50%;">Here are some of the selected projects that showcase my passion for front-end development.</p>
+        </div>
+
+        <div class="container">
+        <div class="row">
+            <div class="column">
+            <img class="pho" src="1.png">
+            </div>
+            <div class="column">
+            <h3>stud-link</h3>
+            <p>my first app developed by me,stud-link is a application that provide the students different type of free intership links of other platforms at one place for students,this platforms helps to minimize the timing finding links of internships and select courses by using provided details of courseduration time.</p>
+            <h4>PROJECT INFO</h4><hr>
+            <div><strong>Year</strong><span style="float:right;">2025</span></div><hr>
+            <div><strong>Role</strong><span style="float:right;">Front-end Developer</span></div><hr>
+            <a href="https://stud-link-self.vercel.app/" target="_blank">LIVE DEMO &#8599;</a>
+            <a href="https://www.github.com/Gouse-X" target="_blank">SEE ON GITHUB<i class="fa fa-github" style="font-size:30px;"></i></a>
+            </div>
+        </div>
+        </div>
+
+        <div class="container">
+        <div class="row">
+            <div class="column">
+            <img class="pho" src="2.png">
+            </div>
+            <div class="column">
+            <h3>Bootstrap UI</h3>
+            <p>my second web application that is developed by using BootstarpUI,by using bootstrap links the pages of html can be developed into well designed web pages.</p>
+            <h4>PROJECT INFO</h4><hr>
+            <div><strong>Year</strong><span style="float:right;">2026</span></div><hr>
+            <div><strong>Role</strong><span style="float:right;">Front-end Developer</span></div><hr>
+            <a href="https://bootstrap5-project-five.vercel.app/" target="_blank">LIVE DEMO &#8599;</a>
+            <a href="https://www.github.com/Gouse-X" target="_blank">SEE ON GITHUB<i class="fa fa-github" style="font-size:30px;"></i></a>
+            </div>
+        </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+            <div class="column">
+                <img class="img" src="3.png">
+            </div>
+            <div class="column">
+                <h3>My portfolio</h3>
+                <p>Successfully developed an portfolo web page featuring a dynamic semantintic html with coloring and some functionality, showcasing proficiency in HTML, CSS, JavaScript in website development.</p>
+                <h4>PROJECT INFO</h4><hr>
+                <div><strong>Year</strong><span style="float:right;">2025</span></div><hr>
+                <div><strong>Role</strong><span style="float:right;">Web Developer</span></div><hr>
+                <a href="demo.com" target="_blank">LIVE DEMO &#8599;</i></a>
+                <a href="https://www.github.com/Gouse-X" target="_blank">SEE ON GITHUB<i class="fa fa-github" style="font-size:30px;"></i></a>
+            </div> 
+            </div>
+        </div>
+        </section><hr>
+        <section id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="column">
+                        <h2>ABOUT ME</h2>
+                    </div>
+                    <div class="column">
+                        <h3>I am a CSE student based in Hydrabad.</h3>
+                        <p>I am a CSE student fresher i like to develope web pages, looking for exciting opportunities in web development. Has computer science Engineering background. Likes to focus on accessibility when developing. Passionate and curious about solving problems. Currently, I'm exploring Reactjs, Webflow and a bit of Designing. While I enjoy photography and travelling. Learning more to improve skill.</p>
+                        <a href="abcd.txt" target="_blank">MORE ABOUT ME</a>
+                    </div>
+                </div>
+            </div>
+        </section><hr>
+        <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <h2>LET'S CONNECT</h2>
+                    <p>Say hello at <a href="mailto:baiggouse59@gmail.com" target="_blank college" style="color: white;text-decoration-color: rgb(166, 255, 65);">baiggouse59@gmail.com</a> </p>
+                    <p>For more info,here's my <a href="Resume.pdf" style="color: white;text-decoration-color: rgb(166, 255, 65);">resume</a></p>
+                    <a href="https://www.linkedin.com/in/gouse-baig-722444358"><i class="fa fa-linkedin" style="font-size:30px;"></i></a>
+                    <a href="https://www.github.com/in/Gouse-X"><i class="fa fa-github" style="font-size:30px;"></i></a>
+                    <a href="https://www.instagram.com/im_gousebaig"><i class="fa fa-instagram" style="font-size:30px;"></i></a>      
+                </div>
+                <div class="column">
+                    <form action="https://formspree.io/f/xlgdqvyo" method="POST">
+                        <input type="hidden" name="_subject" value="New Contact from Portfolio">
+                        <label for="fname">Name</label>
+                        <input type="text" id="fname" name="name" placeholder="Name" required autocomplete="name">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Your@gmail.com" required autocomplete="email">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required autocomplete="off">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Type message..." style="height: 170px" required autocomplete="off"></textarea>
+                        <input class="button" type="submit" value="SEND MSG">
+                    </form>
+                </div>
+            </div>
+        </div>
+        </section>
+        <footer>
+            <p style="text-align: center; background-color: #3e3f3e;padding: 15px;">&copy; 2025 GouseBaig</p>
+        </footer>
+        <script>
+        var form = document.querySelector('form[action*="formspree"]');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                alert('✅ Message sent! Form will be cleared.');
+                setTimeout(function() {
+                    form.reset(); 
+                }, 100); 
+            });
+        }
+        </script>
+    </body>
+</html>
